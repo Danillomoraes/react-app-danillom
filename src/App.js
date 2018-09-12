@@ -6,46 +6,27 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 
 import { Nav, NavItem, Navbar, Jumbotron, Button } from 'react-bootstrap';
 
-var navbar =
-<Navbar>
-  <Navbar.Header>
-    <Navbar.Brand>
-      <img src="https://image.flaticon.com/icons/svg/174/174862.svg"></img>
-    </Navbar.Brand>
-  </Navbar.Header>
-  <Nav>
-    <NavItem>
-      AlgumaCoisa
-    </NavItem>
-    <NavItem>
-      OutraCoisa
-    </NavItem>
-  </Nav>
-</Navbar>;
+var imgSrc = "https://image.flaticon.com/icons/svg/174/174862.svg"
 
-class navbarClass extends React.Component {
-  render () {
-    return React.createElement (
-      'NavBar',
-      null,
-      React.createElement(
-        'Navbar.Header',
-        null,
-        React.createElement(
-          'Navbar.Brand',
-          null,
-          React.createElement(
-            'img',
-            ['src',"https://image.flaticon.com/icons/svg/174/174862.svg"],
-            null
-          )
-        )
-      )
-    )
-  }
-}
-
-
+function Navbara(props) {
+  return (
+    <Navbar>
+      <Navbar.Header>
+        <Navbar.Brand>
+          <img src={props.Src} />
+        </Navbar.Brand>
+      </Navbar.Header>
+      <Nav>
+        <NavItem>
+          AlgumaCoisa
+        </NavItem>
+        <NavItem>
+          OutraCoisa
+        </NavItem>
+      </Nav>
+    </Navbar>
+  )
+};
 
 var element =
 <div>
@@ -53,12 +34,17 @@ var element =
     teste bootstrap
   </p>
   <Button>euSouUmBotao</Button>
-</div>
+</div>;
+
+var NavbarApp = <Navbara Src={imgSrc}></Navbara>;
+
+
 
 class App extends Component {
   render() {
     return (
-      <navbarClass></navbarClass>
+        [NavbarApp,
+        element]
     );
   }
 }
