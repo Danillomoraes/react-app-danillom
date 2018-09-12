@@ -28,6 +28,8 @@ function Navbara(props) {
   )
 };
 
+var test = 'asd';
+
 var element =
 <div>
   <p>
